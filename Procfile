@@ -1,1 +1,2 @@
-web: ./start_jupyter;  gunicorn main:app
+# web: ./start_jupyter;  
+web: gunicorn main:app
