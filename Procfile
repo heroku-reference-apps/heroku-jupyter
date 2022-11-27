@@ -1,1 +1,2 @@
-web: python app.py & ./start_jupyter
+web: python app.py 
+web: ./start_jupyter
