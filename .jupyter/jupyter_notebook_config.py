@@ -3,8 +3,7 @@ try:
     import json
     import traceback
     import pgcontents
-    from IPython.lib.security import passwd
-
+    from notebook.auth import passwd
     c = get_config()
 
     ### Password protection ###
