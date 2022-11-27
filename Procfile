@@ -1,2 +1,2 @@
-worker: python app.py 
-web: ./start_jupyter
+web: gunicorn app:app
+# web: ./start_jupyter
