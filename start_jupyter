@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+unset PYTHONPATH
+unset PYTHONHOME
+
 pgcontents init -l $DATABASE_URL --no-prompt
 
 jupyter contrib nbextension install --user
