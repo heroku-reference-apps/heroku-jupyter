@@ -5,7 +5,7 @@ dependencies:
   - ipywidgets
   - requests
   # bind ipython version (compatibility to pgcontents)
-  - ipython > 7.32.0
+  - ipython = 6.0
   # bind tornado version (websocket problems)
   - tornado
   # get dependencies for pgcontents
