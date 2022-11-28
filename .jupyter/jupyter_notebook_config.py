@@ -26,8 +26,9 @@ try:
     if os.environ.get('JUPYTER_NOTEBOOK_PASSWORD_DISABLED') != 'DangerZone!':
         password = os.environ['JUPYTER_NOTEBOOK_PASSWORD']
         c.NotebookApp.password = passwd(password)
-        load_jupyter_server_extension()
+        
     else:
+        load_jupyter_server_extension()
         c.NotebookApp.token = ''
         c.NotebookApp.password = ''
 
