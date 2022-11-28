@@ -19,6 +19,7 @@ dependencies:
   - nose
   - pip
   - pip:
+    - python-dotenv
     - pgcontents
     - flask
     - git+http://github.com/ipython-contrib/jupyter_contrib_nbextensions.git
