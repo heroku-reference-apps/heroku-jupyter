@@ -1,9 +1,16 @@
+
+
 from tornado import web
 
 class HelloWorldHandler(IPythonHandler):
     @web.authenticated
     def get(self):
         self.finish('Hello, world!')
+
+web_app = nb_server_app.web_app
+host_pattern = '.*$'
+route_pattern = url_path_join(web_app.settings['base_url'], '/hello')
+web_app.add_handlers(host_pattern, [(route_pattern, HelloWorldHandler)])
 
 try:
     import os
@@ -14,13 +21,7 @@ try:
     from notebook.utils import url_path_join
     from notebook.base.handlers import IPythonHandler
     
-  
 
-    def load_jupyter_server_extension(nb_server_app):
-        web_app = nb_server_app.web_app
-        host_pattern = '.*$'
-        route_pattern = url_path_join(web_app.settings['base_url'], '/hello')
-        web_app.add_handlers(host_pattern, [(route_pattern, HelloWorldHandler)])
 
     c = get_config()
     
@@ -63,7 +64,6 @@ try:
         c.NotebookApp.websocket_url = 'wss://{}:4443'.format(uri)
 
 
-    load_jupyter_server_extension()
 except Exception:
     traceback.print_exc()
     # if an exception occues, notebook normally would get started
