@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+set FLASK_APP=application.py
+flask run
+
+
 unset PYTHONPATH
 unset PYTHONHOME
 
