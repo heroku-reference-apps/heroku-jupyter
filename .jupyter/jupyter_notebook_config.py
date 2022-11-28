@@ -1,10 +1,23 @@
+
 try:
     import os
     import json
     import traceback
     import pgcontents
     from notebook.auth import passwd
-   
+    from notebook.utils import url_path_join
+    from notebook.base.handlers import IPythonHandler
+    
+    class HelloWorldHandler(IPythonHandler):
+        def get(self):
+            self.finish('Hello, world!')
+
+    def load_jupyter_server_extension(nb_server_app):
+        web_app = nb_server_app.web_app
+        host_pattern = '.*$'
+        route_pattern = url_path_join(web_app.settings['base_url'], '/hello')
+        web_app.add_handlers(host_pattern, [(route_pattern, HelloWorldHandler)])
+        
     c = get_config()
 
     ### Password protection ###
@@ -44,30 +57,6 @@ try:
         c.NotebookApp.allow_origin = 'https://{}'.format(uri)
         c.NotebookApp.websocket_url = 'wss://{}:4443'.format(uri)
 
-except Exception:
-    traceback.print_exc()
-    # if an exception occues, notebook normally would get started
-    # without password set. For security reasons, execution is stopped.
-    exit(-1)
-try:
-    from notebook.utils import url_path_join
-    from notebook.base.handlers import IPythonHandler
-    
-    class HelloWorldHandler(IPythonHandler):
-        def get(self):
-            self.finish('Hello, world!')
-        
-    def load_jupyter_server_extension(nb_server_app):
-    """
-    Called when the extension is loaded.
-
-    Args:
-        nb_server_app (NotebookWebApplication): handle to the Notebook webserver instance.
-    """
-    web_app = nb_server_app.web_app
-    host_pattern = '.*$'
-    route_pattern = url_path_join(web_app.settings['base_url'], '/hello')
-    web_app.add_handlers(host_pattern, [(route_pattern, HelloWorldHandler)])
 except Exception:
     traceback.print_exc()
     # if an exception occues, notebook normally would get started
