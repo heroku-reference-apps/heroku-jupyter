@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set FLASK_APP=application.py
+set FLASK_APP=app.py
 flask run
 
 
