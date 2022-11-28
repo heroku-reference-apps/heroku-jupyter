@@ -1,4 +1,7 @@
-
+class HelloWorldHandler(IPythonHandler):
+        def get(self):
+            self.finish('Hello, world!')
+            
 try:
     import os
     import json
@@ -8,9 +11,7 @@ try:
     from notebook.utils import url_path_join
     from notebook.base.handlers import IPythonHandler
     
-    class HelloWorldHandler(IPythonHandler):
-        def get(self):
-            self.finish('Hello, world!')
+  
 
     def load_jupyter_server_extension(nb_server_app):
         web_app = nb_server_app.web_app
