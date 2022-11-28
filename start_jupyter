@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 set FLASK_APP=app.py
-flask run
+flask run --host=0.0.0.0 --port=80
 
 
 unset PYTHONPATH
