@@ -1,6 +1,9 @@
+from tornado import web
+
 class HelloWorldHandler(IPythonHandler):
-        def get(self):
-            self.finish('Hello, world!')
+    @web.authenticated
+    def get(self):
+        self.finish('Hello, world!')
 
 try:
     import os
@@ -28,7 +31,6 @@ try:
         c.NotebookApp.password = passwd(password)
         
     else:
-        load_jupyter_server_extension()
         c.NotebookApp.token = ''
         c.NotebookApp.password = ''
 
@@ -60,6 +62,8 @@ try:
         c.NotebookApp.allow_origin = 'https://{}'.format(uri)
         c.NotebookApp.websocket_url = 'wss://{}:4443'.format(uri)
 
+
+    load_jupyter_server_extension()
 except Exception:
     traceback.print_exc()
     # if an exception occues, notebook normally would get started
