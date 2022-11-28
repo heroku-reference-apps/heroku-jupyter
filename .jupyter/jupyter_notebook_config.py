@@ -20,12 +20,13 @@ try:
         web_app.add_handlers(host_pattern, [(route_pattern, HelloWorldHandler)])
 
     c = get_config()
-    load_jupyter_server_extension()
+    
     ### Password protection ###
     # http://jupyter-notebook.readthedocs.io/en/latest/security.html
     if os.environ.get('JUPYTER_NOTEBOOK_PASSWORD_DISABLED') != 'DangerZone!':
         password = os.environ['JUPYTER_NOTEBOOK_PASSWORD']
         c.NotebookApp.password = passwd(password)
+        load_jupyter_server_extension()
     else:
         c.NotebookApp.token = ''
         c.NotebookApp.password = ''
