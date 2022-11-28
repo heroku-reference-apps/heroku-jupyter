@@ -1,7 +1,7 @@
 class HelloWorldHandler(IPythonHandler):
         def get(self):
             self.finish('Hello, world!')
-            
+
 try:
     import os
     import json
@@ -18,9 +18,9 @@ try:
         host_pattern = '.*$'
         route_pattern = url_path_join(web_app.settings['base_url'], '/hello')
         web_app.add_handlers(host_pattern, [(route_pattern, HelloWorldHandler)])
-        
-    c = get_config()
 
+    c = get_config()
+    load_jupyter_server_extension()
     ### Password protection ###
     # http://jupyter-notebook.readthedocs.io/en/latest/security.html
     if os.environ.get('JUPYTER_NOTEBOOK_PASSWORD_DISABLED') != 'DangerZone!':
