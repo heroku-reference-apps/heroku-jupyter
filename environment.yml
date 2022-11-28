@@ -18,6 +18,7 @@ dependencies:
   - sqlalchemy
   - nose
   - pip
+  - vim
   - pip:
     - pgcontents
     - flask
