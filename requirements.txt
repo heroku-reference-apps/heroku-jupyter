@@ -9,3 +9,4 @@ Werkzeug
 psycopg2-binary
 pgcontents
 jupyter
+jupyter-contrib-nbextensions
