@@ -12,3 +12,4 @@ jupyter
 jupyter-contrib-nbextensions
 jupyterlab
 jupyterlab-language-pack-zh-TW
+jupyterlab-lsp
