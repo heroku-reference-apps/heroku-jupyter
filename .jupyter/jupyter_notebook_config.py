@@ -10,7 +10,7 @@ try:
 
 
     c = get_config()
-    c.NotebookApp.ip = os.environ['HOST_URL']
+    c.NotebookApp.ip = os.environ['RAILWAY_STATIC_URL']
 
 
     ### Password protection ###
