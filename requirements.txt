@@ -1,0 +1,15 @@
+line-bot-sdk
+click
+flask
+gunicorn
+itsdangerous
+Jinja2
+MarkupSafe
+Werkzeug
+psycopg2-binary
+pgcontents
+jupyter
+jupyter-contrib-nbextensions
+jupyterlab
+jupyterlab-language-pack-zh-TW
+jupyterlab-lsp

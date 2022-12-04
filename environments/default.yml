@@ -1,13 +1,13 @@
 name: root
 dependencies:
   # bind notebook version (compatibility to pgcontents)
-  - notebook = 4
+  - notebook = 6.0.2
   - ipywidgets
   - requests
   # bind ipython version (compatibility to pgcontents)
-  - ipython = 5
+  - ipython = 7.9.0
   # bind tornado version (websocket problems)
-  - tornado = 4.5
+  - tornado
   # get dependencies for pgcontents
   - certifi
   - click
@@ -19,4 +19,4 @@ dependencies:
   - nose
   - pip:
     - pgcontents
-    - git+git://github.com/ipython-contrib/jupyter_contrib_nbextensions.git
+    - git+http://github.com/ipython-contrib/jupyter_contrib_nbextensions.git
