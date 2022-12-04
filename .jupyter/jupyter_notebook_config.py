@@ -10,7 +10,7 @@ try:
 
 
     c = get_config()
-    c.NotebookApp.ip = '0.0.0.0'
+    c.NotebookApp.ip = os.environ['HOST_URL']
 
 
     ### Password protection ###
