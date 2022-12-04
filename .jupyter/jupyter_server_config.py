@@ -17,11 +17,11 @@ try:
     # http://jupyter-notebook.readthedocs.io/en/latest/security.html
     if os.environ.get('JUPYTER_NOTEBOOK_PASSWORD_DISABLED') != 'DangerZone!':
         password = os.environ['JUPYTER_NOTEBOOK_PASSWORD']
-        c.NotebookApp.password = passwd(password)
+        c.ServerApp.password = passwd(password)
         
     else:
-        c.NotebookApp.token = ''
-        c.NotebookApp.password = ''
+        c.ServerApp.token = ''
+        c.ServerApp.password = ''
 
    
 
