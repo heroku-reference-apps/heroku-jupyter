@@ -1,1 +1,1 @@
-web: ./start_jupyter.sh
+web: ./start_jupyter
