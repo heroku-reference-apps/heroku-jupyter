@@ -6,7 +6,12 @@
 jupyter contrib nbextension install --user
 jupyter nbextensions_configurator enable --user
 
-jupyter notebook \
+# jupyter notebook \
+# 	--no-browser --no-mathjax --ip=* --port $PORT --allow-root\
+# 	$JUPYTER_NOTEBOOK_ARGS \
+# 	notebooks
+
+jupyter lab \
 	--no-browser --no-mathjax --ip=* --port $PORT --allow-root\
 	$JUPYTER_NOTEBOOK_ARGS \
 	notebooks
