@@ -11,3 +11,4 @@ pgcontents
 jupyter
 jupyter-contrib-nbextensions
 jupyterlab
+jupyterlab-language-pack-zh-TW
