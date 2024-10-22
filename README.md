@@ -89,7 +89,7 @@ heroku config:set JUPYTER_NOTEBOOK_PASSWORD_DISABLED=DangerZone! -a <your-app-na
 
 ## Python version
 
-If you want to use a special python version, you should set it in your runtime.txt, for example:
+If you want to use a different Python version, you should set it in the `.python-version` file, for example:
 ```
-python-3.10.6
+3.11
 ```
