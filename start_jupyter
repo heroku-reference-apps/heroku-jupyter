@@ -1,21 +1,8 @@
 #!/usr/bin/env bash
 
-# Update Conda environment with runtime dependencies
-# echo "Updating Conda environment..."
-# conda env update --file runtime.yml || { echo "Conda env update failed"; exit 1; }
-
-# # Install additional runtime pip dependencies
-# echo "Installing pip dependencies..."
-# pip install -r requirements.txt
-# pip install jupyter
-
 echo "Starting pgcontents initialization"
 echo "DATABASE_URL is $DATABASE_URL"
 pgcontents init --no-prompt -l $DATABASE_URL || exit 1
-# currently facing a known issue: https://github.com/quantopian/pgcontents/issues/80
-# need to modify this file, lol: /app/.conda/lib/python3.8/site-packages/pgcontents/alembic/versions/2d46c89138b0_.py
-# or w/ pip: /app/.heroku/python/lib/python3.10/site-packages/pgcontents/alembic/versions/2d46c89138b0_.py
-# comment out the first block ^^
 
 echo "pgcontents initialized"
 
@@ -27,7 +14,7 @@ echo "Enabling nbextensions configurator"
 jupyter nbextensions_configurator enable --user
 echo "Nbextensions configurator enabled"
 
-# heroku will override $PS1 when specified as a config var, so I'm setting it here to make the jupyter
+# heroku will override $PS1 when specified as a config var, so we'll set it here to make the jupyter
 # terminal interface a little prettier:
 export PS1='\[\033[01;34m\]\w\[\033[00m\]\$'
 
