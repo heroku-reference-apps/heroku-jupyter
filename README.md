@@ -1,7 +1,7 @@
 # heroku-jupyter
 
 Use this application to deploy [Jupyter Notebook](https://jupyter.org/) to
-heroku or CloudFoundry. If a postgres database is available,
+Heroku. If a postgres database is available,
 [pgcontents](https://github.com/quantopian/pgcontents) is used to power persistant notebook
 storage.
 
@@ -35,8 +35,7 @@ export JUPYTER_NOTEBOOK_PASSWORD=<your_jupyter_password>
 # if you don't have git:
 brew install git
 # clone this repo (swap with your forked repo if you wish):
-# git clone git@github.com:heroku/heroku-jupyter.git # TODO uncomment if this is fork lands to original heroku repo!
-git clone git@github.com:hillarysanders/heroku-jupyter.git
+git clone git@github.com:heroku/heroku-jupyter.git
 cd heroku-jupyter
 
 # Create a new app (or use an existing one you've made)
@@ -73,12 +72,12 @@ heroku config --app $APP_NAME
 heroku run bash --app $APP_NAME
 
 # view logs
-heroku logs --tail -a jupyter-notebook
+heroku logs --tail -a $APP_NAME
 ```
 
 If you are really sure that you do not want a password protected notebook and server (not recommended), you can set `JUPYTER_NOTEBOOK_PASSWORD_DISABLED` to `DangerZone!`:
 ```
-heroku config:set JUPYTER_NOTEBOOK_PASSWORD_DISABLED=DangerZone! -a <your-app-name>
+heroku config:set JUPYTER_NOTEBOOK_PASSWORD_DISABLED=DangerZone! -a $APP_NAME
 ```
 
 ## Environment / Config variables
@@ -93,3 +92,4 @@ If you want to use a different Python version, you should set it in the `.python
 ```
 3.11
 ```
+
