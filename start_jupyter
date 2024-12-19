@@ -24,8 +24,8 @@ echo "Starting Jupyter Lab"
 jupyter lab \
     --no-browser --ip=0.0.0.0 --port=$PORT \
     --notebook-dir="./notebooks" \
-    --config="/app/jupyter_server_config.py" \
-    --preferred-dir=None 
+#    --config="/app/jupyter_server_config.py" \
+#   --preferred-dir=''
 #    --NotebookApp.allow_origin='*' --NotebookApp.allow_credentials=True \
 #    $JUPYTER_NOTEBOOK_ARGS \
 #    notebooks
