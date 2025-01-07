@@ -39,14 +39,6 @@ try:
         # Set a maximum file size, if desired.
         #c.PostgresContentsManager.max_file_size_bytes = 1000000 # 1MB File cap
 
-    ### CloudFoundry specific settings
-    vcap_application_json = os.getenv('VCAP_APPLICATION', None)
-    if vcap_application_json:
-        vcap_application = json.loads(vcap_application_json)
-        uri = vcap_application['uris'][0]
-        c.NotebookApp.allow_origin = 'https://{}'.format(uri)
-        c.NotebookApp.websocket_url = 'wss://{}:4443'.format(uri)
-
 except Exception:
     traceback.print_exc()
     # if an exception occues, notebook normally would get started
