@@ -9,7 +9,7 @@ try:
 
     # Root directory for notebook
     c.ServerApp.root_dir='/'
-    
+
     ### Password protection ###
     # http://jupyter-notebook.readthedocs.io/en/latest/security.html
     if os.environ.get('JUPYTER_NOTEBOOK_PASSWORD_DISABLED') != 'DangerZone!':
@@ -41,14 +41,6 @@ try:
 
         # Set a maximum file size, if desired.
         #c.PostgresContentsManager.max_file_size_bytes = 1000000 # 1MB File cap
-
-    ### CloudFoundry specific settings
-    vcap_application_json = os.getenv('VCAP_APPLICATION', None)
-    if vcap_application_json:
-        vcap_application = json.loads(vcap_application_json)
-        uri = vcap_application['uris'][0]
-        c.ServerApp.allow_origin = 'https://{}'.format(uri)
-        c.ServerApp.websocket_url = 'wss://{}:4443'.format(uri)
 
 except Exception:
     traceback.print_exc()
