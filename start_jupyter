@@ -18,7 +18,7 @@ echo "Nbextensions configurator enabled"
 # terminal interface a little prettier:
 export PS1='\[\033[01;34m\]\w\[\033[00m\]\$'
 
-echo "Starting Jupyter Lab"
+echo "Starting Jupyter ${JUPYTER_NOTEBOOK_OR_LAB}"
 # NOTE: With allow_origin='*', anyone with the URL and password can potentially access your notebook,
 # so be careful w/ the URL and password. Don't put sensitive data up here.
 jupyter $JUPYTER_NOTEBOOK_OR_LAB \
