@@ -11,7 +11,8 @@
   ],
   "env": {
     "JUPYTER_NOTEBOOK_OR_LAB": {
-      "description": "Set to 'notebook' to launch Jupyter Notebook 7, 'lab' to launch Jupyter Lab."
+      "description": "Set to 'notebook' to launch Jupyter Notebook 7, 'lab' to launch Jupyter Lab.",
+      "value": "lab"
     },
     "JUPYTER_NOTEBOOK_PASSWORD": {
       "description": "IMPORTANT! Set a secure password."
