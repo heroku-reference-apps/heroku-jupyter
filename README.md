@@ -48,7 +48,7 @@ heroku stack:set heroku-24 --app $APP_NAME
 
 # Set your required config variable:
 heroku config:set JUPYTER_NOTEBOOK_PASSWORD=$JUPYTER_NOTEBOOK_PASSWORD -a $APP_NAME
-heroku congif:set JUPYTER_NOTEBOOK_OR_LAB=$JUPYTER_NOTEBOOK_OR_LAB -a $APP_NAME
+heroku config:set JUPYTER_NOTEBOOK_OR_LAB=$JUPYTER_NOTEBOOK_OR_LAB -a $APP_NAME
 
 # Specify the buildpacks it should use:
 heroku buildpacks:add --index 1 heroku-community/apt -a $APP_NAME
