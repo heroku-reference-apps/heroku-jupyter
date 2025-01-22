@@ -21,6 +21,7 @@
     },
     "JUPYTER_NOTEBOOK_ARGS": {
       "description": "Add command line arguments here (optional).",
+      "value": "--version",
       "required": "false"
     }
   },
