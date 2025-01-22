@@ -25,4 +25,3 @@ jupyter $JUPYTER_NOTEBOOK_OR_LAB \
     --no-browser --ip=0.0.0.0 --port=$PORT \
     --ServerApp.allow_origin='*' --ServerApp.allow_credentials=True \
     $JUPYTER_NOTEBOOK_ARGS \
-    notebooks
