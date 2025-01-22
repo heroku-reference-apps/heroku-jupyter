@@ -13,16 +13,16 @@
     "JUPYTER_NOTEBOOK_OR_LAB": {
       "description": "Set to 'notebook' to launch Jupyter Notebook 7, 'lab' to launch Jupyter Lab.",
       "value": "lab",
-      "required": "true"
+      "required": true
     },
     "JUPYTER_NOTEBOOK_PASSWORD": {
       "description": "IMPORTANT! Set a secure password.",
-      "required": "true"
+      "required": true
     },
     "JUPYTER_NOTEBOOK_ARGS": {
       "description": "Add command line arguments here (optional).",
       "value": "--version",
-      "required": "false"
+      "required": false
     }
   },
   "addons": [
