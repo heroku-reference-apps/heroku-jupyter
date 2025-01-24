@@ -1,7 +1,6 @@
 # heroku-jupyter
 
-Use this application to deploy [Jupyter Notebook](https://jupyter.org/) to
-Heroku. If a postgres database is available,
+Use this application to deploy [Jupyter Notebooks](https://jupyter.org/) to Heroku. If a postgres database is available,
 [pgcontents](https://github.com/quantopian/pgcontents) is used to power persistant notebook
 storage.
 
