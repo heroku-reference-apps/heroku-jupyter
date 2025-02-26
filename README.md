@@ -16,9 +16,9 @@ The fastest & easiest way to get started is to choose option 1 below: automatic 
 First, click on this handy dandy button:
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-Go through the form that the ^^ above button leads you to, and choose an app name & password. Then click the purple 'deploy app' button at the bottom of the form.
+Go through the form that the ^^ above button leads you to, and choose an app name, password, and whether to run Jupyter notebook or Jupyter lab. Then click the purple 'deploy app' button at the bottom of the form.
 
-It will take a couple of minutes for your app to deploy, and then you'll be able to click links to 1) manage your app, and 2) view your live, interactive jupyter notebook running on a heroku dyno (with persistant storage!).
+It will take a couple of minutes for your app to deploy, and then you'll be able to click links to 1) manage your app, and 2) view your live, interactive jupyter application running on a heroku dyno (with persistant storage!).
 
 Note: If you choose later to fork this repository, you can link your new repo to your heroku app afterwards.
 
@@ -31,6 +31,8 @@ To create a new app, run:
 ```
 export APP_NAME=<your_app_name>
 export JUPYTER_NOTEBOOK_PASSWORD=<your_jupyter_password>
+# set to 'notebook' or 'lab' to choose which jupyter application to launch:
+export JUPYTER_NOTEBOOK_OR_LAB=<notebook_or_lab>
 
 # if you don't have git:
 brew install git
@@ -46,6 +48,7 @@ heroku stack:set heroku-24 --app $APP_NAME
 
 # Set your required config variable:
 heroku config:set JUPYTER_NOTEBOOK_PASSWORD=$JUPYTER_NOTEBOOK_PASSWORD -a $APP_NAME
+heroku config:set JUPYTER_NOTEBOOK_OR_LAB=$JUPYTER_NOTEBOOK_OR_LAB -a $APP_NAME
 
 # Specify the buildpacks it should use:
 heroku buildpacks:add --index 1 heroku-community/apt -a $APP_NAME
@@ -82,8 +85,9 @@ heroku config:set JUPYTER_NOTEBOOK_PASSWORD_DISABLED=DangerZone! -a $APP_NAME
 
 ## Environment / Config variables
 - `JUPYTER_NOTEBOOK_PASSWORD`: Set password for notebooks
+- `JUPYTER_NOTEBOOK_OR_LAB`: Set to `notebook` or `lab` to determine which Jupyter application to launch
 - `JUPYTER_NOTEBOOK_PASSWORD_DISABLED`: Set to `DangerZone!` to disable password protection
-- `JUPYTER_NOTEBOOK_ARGS`: Additional command line args passed to `jupyter notebook`; e.g. get a more verbose logging using `--debug`. Learn more about available options [here](https://jupyter-server.readthedocs.io/en/latest/other/full-config.html#).
+- `JUPYTER_NOTEBOOK_ARGS`: Additional command line args passed to `jupyter notebook`; e.g. get a more verbose logging using `--debug`
 
 
 ## Python version
